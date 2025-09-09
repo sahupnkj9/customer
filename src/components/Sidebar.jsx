@@ -46,6 +46,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
       items: [
         { label: "Employee", icon: <FaUsers />, path: "/employee" },
         { label: "E commerce", icon: <FiShoppingCart /> },
+        { label: "Customer", icon: <FiUsers />, path: "/customer" },
         { label: "User Profile", icon: <FaRegUserCircle />, path: "/profile" },
         { label: "CRM", icon: <FiClock /> },
         { label: "Project management", icon: <FiClipboard /> },
