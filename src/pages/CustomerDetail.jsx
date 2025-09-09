@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FiLinkedin, FiFacebook, FiTwitter, FiEdit } from "react-icons/fi";
+import { IoIosMore } from "react-icons/io";
 
 const CustomerDetail = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const CustomerDetail = () => {
 
   // Mock customer data - in real app, fetch based on ID
   const customer = {
-    id: 1,
+    id: parseInt(id) || 1,
     name: "Ansolo Lazinatov",
     email: "shatinon@jeemail.com",
     phone: "+1234567890",
@@ -36,7 +37,7 @@ const CustomerDetail = () => {
         date: "Dec 12, 12:56 PM"
       },
       {
-        id: "#2452",
+        id: "#2452", 
         total: "$7264",
         paymentStatus: "CANCELLED",
         fulfillmentStatus: "READY TO PICKUP",
