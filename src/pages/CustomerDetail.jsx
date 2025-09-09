@@ -332,10 +332,10 @@ const CustomerDetail = () => {
                       </td>
                       <td className="p-3">
                         <span className={`px-2 py-1 text-xs rounded-full font-medium ${getStatusColor(order.fulfillmentStatus, "fulfillment")}`}>
-                          {order.fulfillmentStatus} {order.fulfillmentStatus === "ORDER FULFILLED" && "✓"}
+                          {order.fulfillmentStatus.replace("ORDER", "SERVICE")} {order.fulfillmentStatus === "ORDER FULFILLED" && "✓"}
                         </span>
                       </td>
-                      <td className="p-3 text-gray-600 dark:text-gray-300">{order.deliveryType}</td>
+                      <td className="p-3 text-gray-600 dark:text-gray-300">{order.deliveryType.replace("delivery", "service").replace("shipping", "pickup")}</td>
                       <td className="p-3 text-gray-600 dark:text-gray-300">{order.date}</td>
                       <td className="p-3">
                         <button className="text-gray-400 hover:text-gray-600">
@@ -365,14 +365,14 @@ const CustomerDetail = () => {
 
           {/* Wishlist Section */}
           <div className="bg-white dark:bg-[#171F2F] rounded-2xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4">Wishlist ({customer.wishlist.length})</h3>
+            <h3 className="text-xl font-semibold mb-4">Interested Services & Parts ({customer.wishlist.length})</h3>
             
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="text-gray-600 bg-gray-50 dark:bg-[#1E293B] dark:text-gray-300">
                   <tr>
-                    <th className="p-3 text-left font-medium">PRODUCTS ↕</th>
-                    <th className="p-3 text-left font-medium">COLOR ↕</th>
+                    <th className="p-3 text-left font-medium">PARTS/SERVICES ↕</th>
+                    <th className="p-3 text-left font-medium">SPECIFICATION ↕</th>
                     <th className="p-3 text-left font-medium">SIZE ↕</th>
                     <th className="p-3 text-left font-medium">PRICE ↕</th>
                     <th className="p-3 text-left font-medium">TOTAL ↕</th>
